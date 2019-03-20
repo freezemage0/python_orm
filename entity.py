@@ -29,23 +29,3 @@ class Entity:
 		map = {}
 		return map
 
-class User(Entity):
-	def getMap(self):
-		map = {
-			'id': {
-				'datatype': 'integer',
-				'autoincrement': 'true',
-				'primary': 'true'
-			},
-			'test_column': {
-				'datatype': 'text',
-				'null': 'true',
-				'default': 'null'
-			}
-		}
-		return map
-	
-registry = DataRegistry.getInstance()
-registry.registerEntity(User('test_user'))
-userTableObject = registry.getEntity('test_user')
-print(userTableObject.getName())
